@@ -1,0 +1,48 @@
+{
+    "name": "intonation-practice-tool",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Clo Yun-Hee Dufour",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/clo-yunhee/intonation-practice-tool.git"
+    },
+    "bugs": {
+        "url": "https://github.com/clo-yunhee/intonation-practice-tool/issues"
+    },
+    "homepage": "https://github.com/clo-yunhee/intonation-practice-tool#readme",
+    "description": "",
+    "scripts": {
+        "start": "webpack-dev-server --mode=development --open --hot",
+        "build": "webpack --mode=production"
+    },
+    "dependencies": {
+        "@fictivekin/growable-uint8-array": "^1.2.0",
+        "@material-ui/core": "^4.12.3",
+        "@material-ui/icons": "^4.11.2",
+        "@material-ui/lab": "^4.0.0-alpha.60",
+        "@vime/react": "^5.0.31",
+        "audiobuffer-to-wav": "^1.0.0",
+        "hyphenation.en-us": "^0.2.1",
+        "hypher": "^0.2.5",
+        "react": "^17.0.2",
+        "react-awesome-button": "^6.5.1",
+        "react-dom": "^17.0.2",
+        "tex-linebreak": "^0.5.2",
+        "util": "^0.12.4",
+        "wasm-media-encoders": "^0.6.3"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.15.5",
+        "@babel/preset-env": "^7.15.6",
+        "@babel/preset-react": "^7.14.5",
+        "babel-loader": "^8.2.2",
+        "css-loader": "^6.2.0",
+        "html-webpack-plugin": "^5.3.2",
+        "style-loader": "^3.2.1",
+        "webpack": "^5.52.1",
+        "webpack-cli": "^4.8.0",
+        "webpack-dev-server": "^4.2.1"
+    }
+}

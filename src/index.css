@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    min-width: 100vw;
+    max-width: 100vw;
+    min-height: 100vh;
+    max-height: 100vh;
+    /*overflow: hidden auto;*/
+    text-align: center;
+    font-family: -apple-system, Roboto, sans-serif, serif;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

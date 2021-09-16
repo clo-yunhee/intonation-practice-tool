@@ -1,0 +1,9 @@
+.layer {
+    position: absolute;
+    z-index: 8675309;
+    background-color: transparent;
+}
+
+.child {
+    transition: opacity 0.7s ease;
+}

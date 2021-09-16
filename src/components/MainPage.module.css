@@ -1,0 +1,100 @@
+.fileInput {
+    display: none;
+}
+
+.settingInputClass {
+    width: 15ch;
+    font-size: calc(11px + 0.5vmin);
+}
+
+.audioPlayerBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    padding: 5px;
+    overflow: visible !important;
+    background-color: #1a1a1a !important;
+}
+
+.audioPlayerBox vm-player {
+    width: 300px;
+    --vm-controls-bg: #1a1a1a !important;
+    --vm-controls-padding: 4px !important;
+    --vm-control-scale: 0.8 !important;
+    --vm-control-border-radius: 6px !important;
+}
+
+.appDescription p {
+    font-size: calc(11px + 0.5vmin);
+}
+
+.mainUi {
+    max-height: 80vh;
+    transition: opacity 0.15s ease;
+}
+
+.mainUiHidden {
+    position: fixed;
+    transition: opacity 0.15s ease;
+    max-height: 0;
+    opacity: 0;
+}
+
+.mainUiHidden p {
+    visibility: collapse;
+}
+
+.howItWorks {
+    max-height: 80vh;
+    overflow: inherit hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.howItWorks p {
+    font-size: calc(11px + 0.5vmin);
+}
+
+.howItWorksHidden {
+    position: fixed;
+    transition: none;
+    max-height: 0;
+    opacity: 0;
+    visibility: collapse;
+}
+
+@media screen and (min-width: 1600px) {
+    .appDescription p {
+        width: 800px;
+    }
+    .howItWorks p {
+        width: 1000px;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1600px) {
+    .appDescription p {
+        width: 50vw;
+    }
+    .howItWorks p {
+        width: 62.5vw;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+    .appDescription p {
+        width: 600px;
+    }
+    .howItWorks p {
+        width: 630px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .appDescription p {
+        width: 85.714285714vw;
+    }
+    .howItWorks p {
+        width: 90vw;
+    }
+}
