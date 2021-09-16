@@ -27,6 +27,7 @@ target_link_options(intonation-practice PRIVATE
     --extern-pre-js ${PROJECT_SOURCE_DIR}/preload.js
     --extern-post-js ${PROJECT_SOURCE_DIR}/worker.js
     -sSTRICT=1
+    -sEXPORT_ES6=1
     -sENVIRONMENT=worker
     -sEXPORTED_FUNCTIONS=[_malloc,_free,_generateAudio]
     -sMALLOC=emmalloc
@@ -39,11 +40,3 @@ target_link_options(intonation-practice PRIVATE
 set_target_properties(intonation-practice PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/../src/processing
     RUNTIME_OUTPUT_NAME intonation-practice)
-
-add_custom_command(TARGET intonation-practice POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy
-                "$<TARGET_PROPERTY:intonation-practice,RUNTIME_OUTPUT_DIRECTORY>/$<TARGET_PROPERTY:intonation-practice,RUNTIME_OUTPUT_NAME>.wasm"
-                ${PROJECT_SOURCE_DIR}/../public
-    COMMAND ${CMAKE_COMMAND} -E remove
-                "$<TARGET_PROPERTY:intonation-practice,RUNTIME_OUTPUT_DIRECTORY>/$<TARGET_PROPERTY:intonation-practice,RUNTIME_OUTPUT_NAME>.wasm"
-)

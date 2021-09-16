@@ -71,7 +71,7 @@ class IndexPage extends React.Component {
             audioOutBlobURL: URL.createObjectURL(emptyAudioBlob),
             audioOutEmpty: true,
             exportFormat: "mp3",
-            howItWorksVisible: true,
+            howItWorksVisible: false,
         };
     }
 

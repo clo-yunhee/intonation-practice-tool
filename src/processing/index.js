@@ -1,4 +1,4 @@
-import { createMp3Encoder, createOggEncoder } from "wasm-media-encoders";
+import { createEncoder } from "wasm-media-encoders";
 import GrowableUint8Array from "@fictivekin/growable-uint8-array";
 import toWav from "audiobuffer-to-wav";
 
@@ -23,7 +23,10 @@ worker.onmessage = function (e) {
             workerCallbacks.finished(data);
             break;
         default:
-            console.warn("Unknown message from the generateAudio worker:", e.data);
+            console.warn(
+                "Unknown message from the generateAudio worker:",
+                e.data
+            );
             break;
     }
 };
@@ -55,8 +58,11 @@ export async function encodeToMp3(audioBuffer, vbrQuality = 4) {
     const data = audioBuffer.getChannelData(0);
     const sampleRate = audioBuffer.sampleRate;
 
-    const encoder = await createMp3Encoder();
-    
+    const encoder = await createEncoder(
+        "audio/mpeg",
+        new URL("wasm-media-encoders/wasm/mp3", import.meta.url)
+    );
+
     encoder.configure({
         sampleRate,
         channels: 1,
@@ -70,7 +76,7 @@ export async function encodeToMp3(audioBuffer, vbrQuality = 4) {
         const mp3Data = moreData
             ? encoder.encode([data])
             : /* finalize() returns the last few frames */
-                encoder.finalize();
+              encoder.finalize();
 
         /* mp3Data is a Uint8Array that is still owned by the encoder and MUST be copied */
 
@@ -91,8 +97,11 @@ export async function encodeToOgg(audioBuffer, vbrQuality = 4) {
     const data = audioBuffer.getChannelData(0);
     const sampleRate = audioBuffer.sampleRate;
 
-    const encoder = await createOggEncoder();
-    
+    const encoder = await createEncoder(
+        "audio/ogg",
+        new URL("wasm-media-encoders/wasm/ogg", import.meta.url)
+    );
+
     encoder.configure({
         sampleRate,
         channels: 1,
@@ -106,7 +115,7 @@ export async function encodeToOgg(audioBuffer, vbrQuality = 4) {
         const oggData = moreData
             ? encoder.encode([data])
             : /* finalize() returns the last few frames */
-                encoder.finalize();
+              encoder.finalize();
 
         /* oggData is a Uint8Array that is still owned by the encoder and MUST be copied */
 
