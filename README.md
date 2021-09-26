@@ -1,6 +1,6 @@
 # Intonation Practice Tool
 
-Live version at [https://clostuff.xyz/intonation-practice](clostuff.xyz/intonation-practice)
+Live version at [clostuff.xyz/intonation-practice](https://clostuff.xyz/intonation-practice)
 
 ## Building the app
 
